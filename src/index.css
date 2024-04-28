@@ -22,9 +22,22 @@ code {
 
 @keyframes blink {
   from {
-    border-bottom: 3px solid transparent; /* Start with transparent underline */
+    border-bottom: 3px solid transparent;
   }
   to {
-    border-bottom: 3px solid yellow; /* Blinking yellow underline */
+    border-bottom: 3px solid black;
+  }
+}
+
+.dark-blinking-cursor {
+  animation: dark-blink 0.5s infinite alternate;
+}
+
+@keyframes dark-blink {
+  from {
+    border-bottom: 3px solid transparent;
+  }
+  to {
+    border-bottom: 3px solid #6366f1;
   }
 }
