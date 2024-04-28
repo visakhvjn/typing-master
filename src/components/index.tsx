@@ -1,9 +1,9 @@
 import Paragraph from "./paragraph";
 import Score from "./score";
-import Header from "./header";
+import Timer from "./timer";
 
 export {
-  Header,
   Paragraph,
   Score,
+  Timer
 }

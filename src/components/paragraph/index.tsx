@@ -50,7 +50,7 @@ const Paragraph: React.FC<ParagraphProps> = ({ text, userInput, isDarkModeOn = f
       <p className="text-3xl text-center tracking-wide">
         {
           text.split('').map((letter, index) => (
-            <span className={`${isCurrentCursorIndex(index)} ${isMatchingIndex(index)}`}>
+            <span key={index} className={`${isCurrentCursorIndex(index)} ${isMatchingIndex(index)}`}>
               {letter}
             </span>
           ))
