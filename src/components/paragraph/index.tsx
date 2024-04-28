@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
-// import Score from "../score";
+import Score from "../score";
 
 interface ParagraphProps {
   text: string;
@@ -11,6 +11,7 @@ interface ParagraphProps {
 const Paragraph: React.FC<ParagraphProps> = ({ text, userInput, isDarkModeOn = false }) => {
 
   const [matchingIndices, setMatchingIndices] = useState<number[]>([]);
+  const [accuracy, setAccuracy] = useState(0);
   const [currentCursorIndex, setCurrentCursorIndex] = useState(0);
 
   const findMatchingIndices = () => {
@@ -25,6 +26,7 @@ const Paragraph: React.FC<ParagraphProps> = ({ text, userInput, isDarkModeOn = f
       }
     });
 
+    setAccuracy((_matchingIndices.length / userInput.length) * 100);
     setMatchingIndices(_matchingIndices);
   }
 
@@ -45,7 +47,11 @@ const Paragraph: React.FC<ParagraphProps> = ({ text, userInput, isDarkModeOn = f
 
   return (
     <>
-      {/* <Score matchCount={matchingIndices.length} mismatchCount={userInput.length - matchingIndices.length} /> */}
+      {userInput.length !== 0 && <Score
+        matchCount={matchingIndices.length}
+        mismatchCount={userInput.length - matchingIndices.length}
+        accuracy={accuracy}
+      />}
       <br />
       <p className="text-3xl text-center tracking-wide">
         {
