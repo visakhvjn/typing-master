@@ -10,6 +10,7 @@ interface ParagraphProps {
 const Paragraph: React.FC<ParagraphProps> = ({ text, userInput }) => {
 
   const [matchingIndices, setMatchingIndices] = useState<number[]>([]);
+  const [currentCursorIndex, setCurrentCursorIndex] = useState(0);
 
   const findMatchingIndices = () => {
     const textLetters = text.split('');
@@ -26,8 +27,17 @@ const Paragraph: React.FC<ParagraphProps> = ({ text, userInput }) => {
     setMatchingIndices(_matchingIndices);
   }
 
+  const isCurrentCursorIndex = (index: number) => {
+    return index === currentCursorIndex ? 'blinking-cursor' : '';
+  }
+
+  const isMatchingIndex = (index: number) => {
+    return matchingIndices.includes(index) ? 'text-red-600': 'text-white';
+  }
+
   useEffect(() => {
     if (userInput) {
+      setCurrentCursorIndex(userInput.length);
       findMatchingIndices();
     }
   }, [userInput]);
@@ -36,11 +46,13 @@ const Paragraph: React.FC<ParagraphProps> = ({ text, userInput }) => {
     <>
       <Score matchCount={matchingIndices.length} mismatchCount={userInput.length - matchingIndices.length} />
       <br />
-      <p className="text-2xl text-center">
+      <p className="text-3xl text-center tracking-wide">
         {
-          text.split('').map((letter, index) => {
-            return <span className={matchingIndices.includes(index) ? 'text-red-600': 'text-white'}>{letter}</span>
-          })
+          text.split('').map((letter, index) => (
+            <span className={`${isCurrentCursorIndex(index)} ${isMatchingIndex(index)}`}>
+              {letter}
+            </span>
+          ))
         }
       </p>
     </>
