@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Paragraph } from "./components";
+import { Header, Paragraph } from "./components";
+import KeyboardIcon from './assets/icon/keyboard.svg';
 
 const paragraphText = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. At provident fugit repellendus facere nemo ipsam dolore aliquam totam fuga itaque excepturi minus, nesciunt error accusantium quibusdam culpa molestias incidunt quas! Lorem ipsum dolor sit amet consectetur adipisicing elit. At provident fugit repellendus facere nemo ipsam dolore aliquam totam fuga itaque excepturi minus, nesciunt error accusantium quibusdam culpa molestias incidunt quas!';
 
@@ -14,8 +15,12 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <div className="flex items-center justify-center h-screen bg-black">
-      <div className="bg-black relative w-3/4">
+    <div className="flex justify-center h-screen bg-black">
+      <div className="bg-black relative w-3/4 mt-40">
+        <div className="flex flex-col justify-center items-center">
+          <img src={KeyboardIcon} alt='logo' />
+          <Header title="Typing Master" />
+        </div>
         <Paragraph text={paragraphText} userInput={userInput} />
         <input
           ref={userInputRef}
