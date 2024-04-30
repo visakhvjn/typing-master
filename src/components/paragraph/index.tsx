@@ -39,10 +39,8 @@ const Paragraph: React.FC<ParagraphProps> = ({ text, userInput, isDarkModeOn = f
   }
 
   useEffect(() => {
-    if (userInput) {
-      setCurrentCursorIndex(userInput.length);
-      findMatchingIndices();
-    }
+    setCurrentCursorIndex(userInput.length);
+    findMatchingIndices();
   }, [userInput]);
 
   return (

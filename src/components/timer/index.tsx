@@ -5,9 +5,10 @@ interface TimerProps {
   initialValue: number;
   finalValue: number;
   isTimerRunning: boolean;
+  onTimerClose: () => void;
 }
 
-const Timer: React.FC<TimerProps> = ({ initialValue, isTimerRunning, finalValue }) => {
+const Timer: React.FC<TimerProps> = ({ initialValue, isTimerRunning, finalValue, onTimerClose }) => {
   const [currentValue, setCurrentValue] = useState(initialValue);
 
   useEffect(() => {
@@ -21,6 +22,7 @@ const Timer: React.FC<TimerProps> = ({ initialValue, isTimerRunning, finalValue 
           
           if (newValue === finalValue) {
             clearInterval(intervalId);
+            onTimerClose();
           }
 
           return newValue;
