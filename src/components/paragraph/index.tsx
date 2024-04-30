@@ -20,7 +20,7 @@ const Paragraph: React.FC<ParagraphProps> = ({ text, userInput, isDarkModeOn = f
 
     const _matchingIndices: number[] = [];
 
-    userInputLetters.map((userInputLetter, index) => {
+    userInputLetters.forEach((userInputLetter, index) => {
       if (userInputLetter === textLetters[index]) {
         _matchingIndices.push(index);
       }
