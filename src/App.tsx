@@ -61,7 +61,7 @@ const App: React.FC = () => {
           <div className="relative w-3/4">
             <div className="flex flex-col justify-center items-center">
               { hasStartedTyping ?
-                  <Timer initialValue={3} finalValue={0} isTimerRunning={hasStartedTyping} onTimerClose={onTimerClose} />
+                  <Timer initialValue={60} finalValue={0} isTimerRunning={hasStartedTyping} onTimerClose={onTimerClose} />
                   : <div className="flex flex-col items-center">
                     <img src={isDarkModeOn ? DarkKeyboardLgIcon : KeyboardLgIcon} alt='logo' />
                     <h1 className="text-6xl text-center font-bold dark:text-primary mt-2.5">Typing Master</h1>
