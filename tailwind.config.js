@@ -10,7 +10,9 @@ module.exports = {
         body: 'white',
         darkBody: '#0f172a',
         primary: '#6366f1',
-        secondary: '#94a3b8'
+        hoverPrimary: '#4d50cc',
+        secondary: '#94a3b8',
+        hoverSecondary: 'black'
       }
     },
   },
