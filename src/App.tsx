@@ -52,7 +52,7 @@ const App: React.FC = () => {
     <div className={`${isDarkModeOn ? 'dark': ''}`}>
       <div className="dark:bg-darkBody bg-body h-screen">
         <div className="flex px-8 py-4 items-center">
-          { !hasStartedTyping && <div className="flex items-center">
+          { hasStartedTyping && <div className="flex items-center">
             <img className="" src={isDarkModeOn ? DarkKeyboardIcon : KeyboardIcon} alt='logo' />
             <h1 className="text-xl text-center font-bold dark:text-primary mt-3 ml-1">Typing Master</h1>
           </div>}
