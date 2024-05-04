@@ -34,6 +34,12 @@ const App: React.FC = () => {
     window.location.reload();
   }
 
+  const handleKeyDown = (event: any) => {
+    if (event.key === 'Tab') {
+      event.preventDefault();
+    }
+  };
+
   useEffect(() => {
     if (userInput.length && !hasStartedTyping) {
       setHasStartedTyping(true);
@@ -91,6 +97,7 @@ const App: React.FC = () => {
               />
             </div>
             <input
+              onKeyDown={handleKeyDown}
               disabled={showOverlay}
               ref={userInputRef}
               className="absolute inset-0 bg-transparent border-none focus:outline-none w-full h-full text-transparent"
