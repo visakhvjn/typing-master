@@ -54,12 +54,14 @@ const App: React.FC = () => {
     getParagraphFromGemini().then((paragraph) => {
       setParagraph(paragraph);
       setIsParagraphLoading(false);
-
-      if (userInputRef.current) {
-        userInputRef?.current.focus();
-      }
     });
   };
+
+  useEffect(() => {
+    if (!isParagraphLoading) {
+      userInputRef.current?.focus();
+    }
+  }, [isParagraphLoading]);
 
   useEffect(() => {
     if (userInput.length && !hasStartedTyping) {
@@ -69,9 +71,6 @@ const App: React.FC = () => {
 
   useEffect(() => {
     getParagraph();
-    if (userInputRef.current) {
-      userInputRef?.current.focus();
-    }
   }, []);
 
   return (
