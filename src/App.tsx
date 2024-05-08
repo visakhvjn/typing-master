@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useRef, useState } from "react";
 import {
+  AppFooter,
   AuthLoginButton,
   AuthLogoutButton,
   Loader,
@@ -160,6 +161,7 @@ const App: React.FC = () => {
             />
           </div>
         </div>
+        <AppFooter />
       </div>
     </div>
   );

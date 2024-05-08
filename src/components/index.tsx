@@ -4,5 +4,16 @@ import Timer from "./timer";
 import AuthLoginButton from "./auth-login-button";
 import AuthLogoutButton from "./auth-logout-button";
 import Loader from "./loader";
+import Footer from "./footer";
+import AppFooter from "./app-footer";
 
-export { AuthLoginButton, AuthLogoutButton, Loader, Paragraph, Score, Timer };
+export {
+  AppFooter,
+  AuthLoginButton,
+  AuthLogoutButton,
+  Footer,
+  Loader,
+  Paragraph,
+  Score,
+  Timer,
+};
