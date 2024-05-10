@@ -6,6 +6,7 @@ import {
   AuthLogoutButton,
   Loader,
   Paragraph,
+  Reports,
   Timer,
 } from "./components";
 import KeyboardIcon from "./assets/icon/keyboard.svg";
@@ -15,7 +16,7 @@ import DarkKeyboardLgIcon from "./assets/icon/dark-keyboard-lg.svg";
 import MoonIcon from "./assets/icon/moon.svg";
 import SunIcon from "./assets/icon/sun.svg";
 import { useAuth0 } from "@auth0/auth0-react";
-import { getParagraphFromGemini } from "./services/gemini";
+// import { getParagraphFromGemini } from "./services/gemini";
 
 const App: React.FC = () => {
   const [isDarkModeOn, setIsDarkModeOn] = useState(
@@ -23,7 +24,11 @@ const App: React.FC = () => {
   );
   const [hasStartedTyping, setHasStartedTyping] = useState(false);
   const [showOverlay, setShowOverlay] = useState(false);
-  const [paragraph, setParagraph] = useState<string>("");
+  const [showReports, setShowReports] = useState(false);
+  const [paragraph, setParagraph] = useState<string>(
+    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam laudantium provident corrupti id sunt quia sint dicta quasi quod quisquam. Ut placeat perferendis impedit enim? Corrupti rerum a assumenda temporibus!"
+  );
+
   const [isParagraphLoading, setIsParagraphLoading] = useState(true);
   const { isAuthenticated, user } = useAuth0();
 
@@ -37,6 +42,7 @@ const App: React.FC = () => {
   };
 
   const onTimerClose = () => {
+    setShowReports(true);
     setShowOverlay(true);
   };
 
@@ -51,11 +57,11 @@ const App: React.FC = () => {
   };
 
   const getParagraph = () => {
-    setIsParagraphLoading(true);
-    getParagraphFromGemini().then((paragraph) => {
-      setParagraph(paragraph);
-      setIsParagraphLoading(false);
-    });
+    setIsParagraphLoading(false);
+    // getParagraphFromGemini().then((paragraph) => {
+    setParagraph(paragraph);
+    //   setIsParagraphLoading(false);
+    // });
   };
 
   useEffect(() => {
@@ -161,6 +167,7 @@ const App: React.FC = () => {
             />
           </div>
         </div>
+        {showReports && <Reports isOpen={true} />}
         <AppFooter />
       </div>
     </div>
