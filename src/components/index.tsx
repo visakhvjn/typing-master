@@ -6,6 +6,7 @@ import AuthLogoutButton from "./auth-logout-button";
 import Loader from "./loader";
 import Footer from "./footer";
 import AppFooter from "./app-footer";
+import Reports from "./report";
 
 export {
   AppFooter,
@@ -14,6 +15,7 @@ export {
   Footer,
   Loader,
   Paragraph,
+  Reports,
   Score,
   Timer,
 };
