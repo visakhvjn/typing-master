@@ -161,7 +161,7 @@ const App: React.FC = () => {
             />
           </div>
         </div>
-        <AppFooter />
+        <AppFooter isDarkModeOn={isDarkModeOn} />
       </div>
     </div>
   );

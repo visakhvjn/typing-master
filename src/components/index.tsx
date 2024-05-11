@@ -6,11 +6,13 @@ import AuthLogoutButton from "./auth-logout-button";
 import Loader from "./loader";
 import Footer from "./footer";
 import AppFooter from "./app-footer";
+import BuyMeACoffee from "./buy-me-a-coffee";
 
 export {
   AppFooter,
   AuthLoginButton,
   AuthLogoutButton,
+  BuyMeACoffee,
   Footer,
   Loader,
   Paragraph,

@@ -1,7 +1,14 @@
 import React, { PropsWithChildren } from "react";
-import { Footer } from "../index";
+import { BuyMeACoffee, Footer } from "../index";
 
-const AppFooter: React.FC<PropsWithChildren> = ({ children }) => {
+type AppFooterProps = {
+  isDarkModeOn: boolean;
+};
+
+const AppFooter: React.FC<PropsWithChildren<AppFooterProps>> = ({
+  children,
+  isDarkModeOn,
+}) => {
   return (
     <Footer>
       <div className="flex space-x-1">
@@ -22,6 +29,9 @@ const AppFooter: React.FC<PropsWithChildren> = ({ children }) => {
         >
           <span>LinkedIn</span>
         </a>
+      </div>
+      <div className="absolute right-0 bottom-0 p-4">
+        <BuyMeACoffee isDarkModeOn={isDarkModeOn} />
       </div>
     </Footer>
   );
