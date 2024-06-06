@@ -7,13 +7,8 @@ import {
   Loader,
   Paragraph,
   Timer,
-} from "./components";
-import KeyboardIcon from "./assets/icon/keyboard.svg";
-import KeyboardLgIcon from "./assets/icon/keyboard-lg.svg";
-import DarkKeyboardIcon from "./assets/icon/dark-keyboard.svg";
-import DarkKeyboardLgIcon from "./assets/icon/dark-keyboard-lg.svg";
-import MoonIcon from "./assets/icon/moon.svg";
-import SunIcon from "./assets/icon/sun.svg";
+} from "@components";
+import { KeyboardIcon, KeyboardLgIcon, DarkKeyboardIcon, DarkKeyboardLgIcon, MoonIcon, SunIcon } from "@icons";
 import { useAuth0 } from "@auth0/auth0-react";
 import { getParagraphFromGemini } from "./services/gemini";
 

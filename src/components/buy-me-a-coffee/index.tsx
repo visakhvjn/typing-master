@@ -1,6 +1,5 @@
 import React from "react";
-import CoffeeCupIcon from "../../assets/icon/coffee-cup.svg";
-import CoffeeCupDarkIcon from "../../assets/icon/coffee-cup-dark.svg";
+import { CoffeeCupIcon, CoffeeCupDarkIcon } from "@icons";
 
 type BuyMeACoffeeProps = {
   isDarkModeOn: boolean;

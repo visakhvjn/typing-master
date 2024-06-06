@@ -1,5 +1,5 @@
 import React from 'react';
-import KeyboardIcon from "./assets/icon/keyboard.svg";
+import { KeyboardIcon } from "@icons";
 
 const Support: React.FC = () => {
   return <div className='flex flex-col justify-center h-screen items-center text-center p-10 space-y-2'>
